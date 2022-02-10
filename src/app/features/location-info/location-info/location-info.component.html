@@ -1,0 +1,49 @@
+<img class="regis-image img-fluid " src="assets/images/userinfo.jpg">
+<div class="container  pt-5 ">
+
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded  userinfo w-75">
+    <div class="card-header bg-transparent border-success d-flex">
+      <p>Welcome <b>{{userData?.name?.first}} {{userData?.name?.last}}</b></p>
+
+      <a class="logout" href="" (click)="logout()" [routerLink]="['/auth']"
+        routerLinkActive="router-link-active"><b>Logout</b></a>
+    </div>
+    <div class="card-body  ">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Location Details</h5>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>City : </b> {{this.locationDetails.city}}</li>
+                <li class="list-group-item"><b>State : </b> {{this.locationDetails.state}}</li>
+                <li class="list-group-item"><b>Country : </b> {{this.locationDetails.country}}</li>
+                <li class="list-group-item"><b>PostCode : </b>{{this.locationDetails.postcode}}</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Weather Details</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Weather : </b>{{this.weatherDetails?.weather.description}}</li>
+                <li class="list-group-item"><b>Wind Direction : </b>{{this.weatherDetails?.wind_cdir_full}}</li>
+                <li class="list-group-item"><b>Wind speed : </b>{{this.weatherDetails?.wind_spd}}</li>
+                <li class="list-group-item"><b>Presure : </b>{{this.weatherDetails?.pres}}</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent text-center ">
+
+
+    </div>
+  </div>
+</div>

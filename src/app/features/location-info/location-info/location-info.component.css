@@ -1,0 +1,18 @@
+.regis-image{
+  width: 100%;
+  position: absolute;
+}
+.userinfo{
+  margin-right: auto;
+  margin-left:auto;
+  opacity: 0.9;
+}
+.logout{
+  margin-left: 70%;
+  text-decoration: none;
+  color: black;
+}
+.card-title{
+  font-size: 20px;
+}
+

@@ -1,0 +1,31 @@
+<img class="regis-image img-fluid " src="assets/images/userinfo.jpg">
+<div class="container  pt-5 ">
+
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded  userinfo w-75">
+    <div class="card-header bg-transparent border-success d-flex">
+      <p><b>Profile</b></p>
+      <a class="logout" href="" (click)="logout()" [routerLink]="['/auth']"
+        routerLinkActive="router-link-active"><b>Logout</b></a>
+    </div>
+    <div class="card-body text-center ">
+      <img [src]="userDetails?.picture?.large" class="user mb-2">
+      <div class="">
+        <p class="card-text">{{userData.title}}</p>
+        <h3>{{userData.details}}</h3>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent text-center ">
+
+      <button class="btn" (click)="getUserDetails('name')"><i class="fa fa-user fa-2x icon-cog p-3 "></i></button>
+      <button class="btn" (click)="getUserDetails('email')"> <i class="fa fa-envelope fa-2x icon-cog p-3 "></i></button>
+      <button class="btn" (click)="getUserDetails('phone')"> <i class="fa fa-phone fa-2x icon-cog p-3 "></i></button>
+
+      <button class="btn" (click)="getUserDetails('dob')"> <i class="fa fa-calendar fa-2x icon-cog p-3 "></i></button>
+      <div class="row  ">
+        <a class="more" href="" (click)="setUserData()" [routerLink]="['/locationInfo']"
+          routerLinkActive="router-link-active"> Get More details here -></a>
+      </div>
+
+    </div>
+  </div>
+</div>

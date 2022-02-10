@@ -1,0 +1,50 @@
+.regis-image{
+  width: 100%;
+  position: absolute;
+}
+.userinfo{
+  margin-right: auto;
+  margin-left:auto;
+  opacity: 0.9;
+}
+.user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+.icon-cog{
+  color:grey
+}
+.icon-cog:hover{
+  color:red;
+}
+
+
+.btn{
+  /* border:none; */
+  background-color: white;
+  /* outline: none !important; */
+}
+.btn:focus
+ {
+   outline:none !important;
+   box-shadow: none;
+}
+.more{
+  /* color:black; */
+  text-decoration:none !important;
+  padding-left: 78%;
+
+}
+
+.logout{
+  margin-left:85%;
+  text-decoration: none;
+  color: black;
+}
+
+
+

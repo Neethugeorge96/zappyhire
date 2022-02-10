@@ -1,0 +1,24 @@
+.register{
+  margin-right: auto;
+  margin-left:auto;
+  opacity: 0.9;
+}
+.labeltext{
+  font-size: 14px;
+}
+.regis-image{
+  width: 100%;
+  position: absolute;
+}
+
+.success-snack{
+  background-color: green !important;
+}
+
+.error-snack{
+  background-color: red !important;
+}
+
+::placeholder {
+  font-size:12px;
+}
