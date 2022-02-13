@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from '../user-info.service';
 import { LocationService } from '../../location-info/location.service';
 import { AuthService } from '../../../Services/auth.service';
+import { IndexedDBService } from 'src/app/Services/indexed-db.service';
 
 @Component({
   selector: 'app-user-info',
@@ -17,7 +18,8 @@ export class UserInfoComponent implements OnInit {
   constructor(private userService: UserInfoService,
     public datepipe: DatePipe,
     public locationService: LocationService,
-    public authService: AuthService
+    public authService: AuthService,
+    private indexedDB: IndexedDBService,
   ) { }
 
   ngOnInit(): void {
@@ -55,7 +57,7 @@ export class UserInfoComponent implements OnInit {
     this.locationService.setUserData(this.userDetails);
   }
   logout() {
-    this.authService.logout()
+    this.indexedDB.logout()
   }
 
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { IndexedDBService } from '../../../Services/indexed-db.service';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private Router: Router,
     private snackbar: MatSnackBar,
+    private indexedDB: IndexedDBService
   ) { }
 
   ngOnInit(): void {
@@ -100,20 +102,22 @@ export class RegisterComponent implements OnInit {
     }
     else {
       let response = this.registerForm.getRawValue();
-      localStorage.setItem('userData', JSON.stringify(response));
-      this.snackbar.open('user added sucessfully', '', {
-        duration: 3000,
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-        panelClass: ['success-snack']
-      })
-      this.Router.navigate(['/auth'])
+
+      this.indexedDB.addData(response).then(
+        (result) => {
+          console.log("data added", result)
+          this.snackbar.open('user added sucessfully', '', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+            panelClass: ['success-snack']
+          })
+          this.Router.navigate(['/auth'])
+
+        },
+        error => { console.log("error", error); }
+
+      )
     }
-
   }
-  onReset() {
-    this.registerForm.reset();
-  }
-
-
 }

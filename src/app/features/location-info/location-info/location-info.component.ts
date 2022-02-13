@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LocationService } from '../location.service';
 import { AuthService } from '../../../Services/auth.service';
+import { IndexedDBService } from 'src/app/Services/indexed-db.service';
 
 @Component({
   selector: 'app-location-info',
@@ -16,7 +17,8 @@ export class LocationInfoComponent implements OnInit,OnDestroy {
   weatherDetails :any;
 
   constructor(private locatonService : LocationService,
-    private authService:AuthService) { }
+    private authService:AuthService,
+    private indexedDB:IndexedDBService,) { }
 
   ngOnInit(): void {
     this.getLocationDetails();
@@ -44,7 +46,8 @@ export class LocationInfoComponent implements OnInit,OnDestroy {
   }
 
   logout(){
-    this.authService.logout()
+    // this.authService.logout()
+    this.indexedDB.logout();
   }
 
 }
